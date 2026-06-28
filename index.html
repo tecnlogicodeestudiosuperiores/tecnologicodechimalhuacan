@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESCHI - Portal de Calificaciones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PANTALLA DE INICIO DE SESIÓN -->
+    <div id="login-page-container">
+        <header class="teschi-header">
+            <div class="logo-container">
+                <img src="https://3.bp.blogspot.com/-RfL7AzQqjXk/T_uIlq4wl9I/AAAAAAAAAJ0/l-3-utq4mdY/s1600/teschi_logo_normal_transparente.gif" alt="Logo TESCHI" class="teschi-logo">
+            </div>
+            <h1>TECNOLÓGICO DE ESTUDIOS SUPERIORES DE CHIMALHUACÁN</h1>
+            <p class="siia-title">Sistema de Información Integral Administrativa (SIIA)</p>
+        </header>
+
+        <div class="login-main-content">
+            <div class="mascot-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_5MDKhzCMTXhg61cxWoQ6lQ8uwiZMVXU2NTi77M67SvoiOVJ3N5pwuTkF&s=10" alt="Mascota TESCHI" class="teschi-mascot">
+            </div>
+
+            <div id="login-container" class="teschi-login-box">
+                <form id="login-form">
+                    <div class="input-group">
+                        <input type="text" id="matricula" placeholder="Usuario / Matrícula" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="btn-teschi-submit">Iniciar Sesión</button>
+                    <a href="#" class="forgot-link">¿Olvidó su Contraseña?</a>
+                    <p id="login-error" class="error-msg"></p>
+                </form>
+            </div>
+        </div>
+
+        <footer class="teschi-footer">
+            <p>C.Primavera S/N, Col. Santa María Nativitas, Chimalhuacán, Estado de México, C.P. 56330</p>
+            <p>Teléfonos: (55) 50-44-70-20, 50-44-41-31, 58-55-72-93, 58-52-74-26 E-mail: webmaster@teschi.edu.mx</p>
+            <div class="demo-cred"><strong>Prueba:</strong> Matrícula: 2025452046 | Clave: alumno123</div>
+        </footer>
+    </div>
+
+    <!-- PANEL DE CONTROL INTERNO INTERACTIVO -->
+    <div id="dashboard-container" class="teschi-dashboard hidden">
+        
+        <!-- BARRA LATERAL VERDE -->
+        <aside class="teschi-sidebar">
+            <div class="sidebar-logo">
+                <img src="https://1.bp.blogspot.com/-xn09sy8zahE/VjZuRSreIcI/AAAAAAAAHeE/h6M0HlWC_fc/s1600/8529e2d0e70f1c95e13dc7c23fb3ae70.jpg" alt="Logo TESCHI">
+            </div>
+            
+            <div class="sidebar-user-info">
+                <p class="user-matricula-display" id="user-matricula">2025452046</p>
+                <div class="divider-line"></div>
+                <p class="user-name-display">YOVANI VÁZQUEZ GUZMÁN</p>
+                <p class="user-career-display">INGENIERÍA EN SISTEMAS COMPUTACIONALES</p>
+                <p class="user-semester-display">2do Semestre — excelente</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <button class="menu-btn" data-tab="tab-registro">Registro</button>
+                
+                <div class="submenu-container">
+                    <button class="menu-btn active" id="btn-reportes-main">Reportes</button>
+                    <div class="submenu-content" id="reportes-submenu">
+                        <button class="submenu-item active" data-tab="tab-parciales">▸ Calificaciones Parciales</button>
+                        <button class="submenu-item" data-tab="tab-finales">▸ Calificaciones Finales</button>
+                        <button class="submenu-item" data-tab="tab-historial">▸ Historial Académico</button>
+                        <button class="submenu-item" data-tab="tab-tira">▸ Tira de materia</button>
+                    </div>
+                </div>
+
+                <button class="menu-btn" data-tab="tab-usuario">Usuario</button>
+                <button id="logout-btn" class="menu-btn logout-style">Salir</button>
+            </nav>
+        </aside>
+
+        <!-- PANEL DE INFORMACIÓN CENTRAL (CONTENEDOR BLANCO) -->
+        <main class="teschi-main-panel">
+            <div class="white-content-box">
+                
+                <!-- SECCIÓN: REGISTRO -->
+                <div id="tab-registro" class="tab-content hidden" style="font-size: 14px; line-height: 1.6; color: #334155;">
+                    <div class="boleta-header-box"><span class="icon-folder">📝</span> Registro de Inscripción</div>
+                    
+                    <div style="background-color: #c2e7be; text-align: center; padding: 6px; font-weight: bold; color: #14532d; font-size: 11px; margin-bottom: 20px; border-radius: 4px;">
+                        Periodo Escolar Vigente
+                    </div>
+
+                    <div style="padding: 15px; border-left: 4px solid #68ab59; background-color: #f8fafc; margin-bottom: 15px; border-radius: 0 4px 4px 0;">
+                        <p style="font-weight: bold; color: #14532d; margin-bottom: 5px;">Módulo de Reinscripción Escolar en Línea</p>
+                        <p style="font-size: 13px; color: #64748b;">Estimado estudiante, este apartado muestra la convocatoria y el estatus de tus trámites de inscripción actuales.</p>
+                    </div>
+
+                    <p style="margin-bottom: 12px;"><strong>Estatus del trámite:</strong> <span style="color: #16a34a; font-weight: bold;">Vigente y Autorizado</span></p>
+                    <p style="color: #64748b; font-style: italic;">Por el momento no se requieren acciones adicionales en este apartado del portal.</p>
+                </div>
+              
+
+            
+                    
+
+                <!-- SUB-SECCIÓN: CALIFICACIONES PARCIALES -->
+                <div id="tab-parciales" class="tab-content">
+                    <div class="boleta-header-box"><span class="icon-folder"></span> Calificaciones</div>
+                    <div class="periodo-selector-bar">
+                        <span class="periodo-lbl">2026-1</span>
+                        <div class="periodo-dropdown-sim">
+                            <span>Selecciona un periodo para ver tus calificaciones | 2026-1</span>
+                            <span class="arrow-down">⌂</span>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="teschi-table-official">
+                            <thead>
+                                <tr>
+                                    <th class="col-num">N°</th>
+                                    <th class="col-docente">Docente</th>
+                                    <th class="col-materia">Materia</th>
+                                    <th class="col-parcial">Primer Parcial</th>
+                                    <th class="col-parcial">Segundo Parcial</th>
+                                    <th class="col-parcial">Tercer Parcial</th>
+                                    <th class="col-grupo">Grupo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="grades-table-body"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- RECUADRO DESTACADO PARA EL PROMEDIO SEMESTRAL -->
+                    <div id="promedio-semestre-container"></div>
+                </div>
+
+
+                
+
+                <!-- SUB-SECCIÓN: CALIFICACIONES FINALES (LA NUEVA TABLA QUE ME PEDISTE) -->
+                <div id="tab-finales" class="tab-content hidden" style="text-align: center;">
+                    <div class="boleta-header-box"><span class="icon-folder"></span> Calificaciones Finales</div>
+                    <div class="periodo-selector-bar">
+                        <span class="periodo-lbl">2026-1</span>
+                        <div class="periodo-dropdown-sim">
+                            <span>Selecciona un periodo para ver tus calificaciones | 2026-1</span>
+                            <span class="arrow-down">⌂</span>
+                        </div>
+                    </div>
+                    
+                    <!-- IMAGEN AJUSTADA PARA CALIFICACIONES FINALES -->
+                    <div style="width: 100%; overflow-x: auto; margin-top: 10px;">
+                        <img id="finales-img-src" src="https://lh3.googleusercontent.com/rd-saves/AA8Ys24ScA3IL8fYkiOu_tX-Q-eTgNTIMx003wEQVC0QPXcAsL8uqduolnfruadjx3q-vmMKqOeYX_571JPyv3a-pjPe9yA1fpKBV1B-V6lpJIbriVaduFu9FSGHIt8n-yg8qyXDGBZDJnf8SpHd_ZIxcSFTotVefNZarZ-mLisndm8x03mNxeDGha31Y-fUiBs_ltapF04er44VDW0ChwtzwixrQ9MdKjP2blJ_dS93GJQScbW5c3RYz4MutnVCjblt4xsvzeBM1ZruJ08qi5ZvlQ5iqGxdlLi3g0wQrD3f5OK76ak6jRIZBcZJ0wIcoZSxfwTqxt-J0PSD5pvz_-EmnmbmWyJU228Lwy5uS7lIclinplTxVyJezJtfFfJOgSU5wBksbznhguNj_83g9ixTFHBnNWrCxKwv_mFNErdfeYCptLE-xZDU_iIkr3RgAVYH_1X5tqS0x1EGUB__YBCHViIoIcNX6f4dYCh5u5hyJBgMGufdV2CRegr-SRq19gtesPOSV-rzlZEUhnH5etlpesewIFjSqmVfugoW6lCfJ8A_UkgLZYtommazPmhcPn3NhcjJIA9xHclwCHxE4ugONzM_TzeohEZoFbnXAHTSaJ4pxsBpnfV37cjjlcuIt91lB3q99Lu5tqFg8LAaHFpKqNF3b1hiI1SsEeiNPBIsCrjXqwkd0js_1jHW6BZIyzGyL_jJGLpzzvBSXQRCPRwM-daaZVYl3KP7AV9bTr5q2NBU-9P0rKnAvX-7YaGXlXBl-yHsjyXzpV8jZlVTNSLY_JASvQsfxdfj9n6PJcUxuEOROVDwc1FFSKWEfy4MChyJIlecBjXTS1cVoJeg6dNZ8ZWmnkEKrJKQobDSjmW95N7IBQtcKzeGrfsD1vGSPzsr0mba9W7k_K_WImTXZbA35s614WOmuRs4X2tmTrWF8amNswdoXKzfiye4YnGXcOoBxe9yJ92pn40qCx2lx4ytmI68ibf7Nmvg5wcJb6URqGx8DqEDt9-T73FNcIqTxHXx-OlZCYj-dScvShPSO5e4x2r5IHw9CrL-FnHK9WSap56AHhOvHJBbqUoV1WnkIYYu0INoP4AQn8KjDLpRREu_e-5oNnX2-I6Bb2hmAgn9ZA0_IRj6UrbGd4Z2HIYRBY6suQsZws6Cny6IryWgob-xJXqpI_ehpnsxYppbDkV5Qaa8T75YTx71rQGE=s2048-k" alt="Calificaciones Finales Oficial" style="max-width: 100%; height: auto; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    </div>
+                </div>
+
+                <!-- SUB-SECCIÓN: HISTORIAL ACADÉMICO -->
+
+
+                <div id="tab-historial" class="tab-content hidden" style="text-align: center;">
+                    <div class="boleta-header-box"><span class="icon-folder"></span> Historial Académico</div>
+                    
+                    <div style="background-color: #c2e7be; text-align: center; padding: 4px; font-weight: bold; color: #14532d; font-size: 11px; margin-bottom: 15px; border-radius: 4px;">
+                        2025-2
+                    </div>
+
+                    <!-- AQUÍ SE ENCUENTRA TU IMAGEN AJUSTADA PARA TU CELULAR -->
+                    <div style="width: 100%; overflow-x: auto; margin-top: 10px;">
+                        <img id="kardex-img-src" src="https://lh3.googleusercontent.com/rd-saves/AA8Ys249wRGxVoZfOiqUU2Jw9z5QOKCAMpM1sVCBZ1fHL6LTvQUu34f6C1T8Hl7r-igumtxCWjQCTiPiLpvMc6FXTaVhMsIpDfBBkAGbogHfjt-6jpmGEn4t7T9enIUOGMpEgT9d0L0hMCSw_0BBud2pUBv-VkUA_DhX8NqeOwAC4Zm-PVM2KLwd2CVYZfGcvC9YHrHzcddZ_kiPyJK-kyH7VxUF6ClfzJ4j8XPB4Ai_TEZIZeOxrJ38yYufoq36kldR7QxKW_4YUnQnzHIb4fcv8IFLXZu2Z8OuH-Ge7KhuAIqZeh9op8xHGN6svC2zpV99LrJqaJxvJfIxAXag-XWGd9DmqwH5XLwbNnOuGGAKE_v8jYKzVxufezJCQ0xHtKXo8Qmr1SLPmthWwhj-vS_FtL5OhBiFx8bqhjT_0qCRa4UKk8bxTek0bRvzKAyWo0hsSSm2JNeDfxQpxDKrN_jXGM8LkaYBwZJ3O0nIA2b4FpUvLgiLUxEhrWsb-_tPl3JXfDtwqhyPaPW-m0G5WhDWfbSuFUKhORX9eFnynjdiZsUOC20BLmcvNsew4qGWtQmLYelbYLmeJ3FE_6x2qLbXcTxSHOCi5od1m1S70oAufkcjYOl_YwamP99h6LinbPE409f8nfHzsI1Szs-hw-GF1GV4yLjRYAPLERbEGVN7tVmrt0aiGlHuGj0GuVsVD5ptp9mgmhWz0SdhC8Qv8N1dwhQ7VzQ9yot0zp-p-KN21rkp_VOZmy1IPcEPPtkyzpk-WJtdEV3NyunNNuRjc2Z-XSkNEg04Rk3jPrX12SFcDbPti_Nj6q0prj9_kCZiC_jjtvhBM6RdUgjRCNfZRIt5ih_NCJJeXJJYZy6fy6JsQA16dLXi2-CR9Yc1WDuTdCSIDcfIEfAr0rZmAmPaaShiNc37vJUdETy_ll7JccKzro6pQ7NM3W5g01U_NXXOMtitrw4InECwV_3u7vyHFhoUzPWxOV5sPo9EatUMjlvlydlieymv1HVeBqzJr4Ay7i-RQbbz-5JBchGjvnjefjDQJi0RSzqmVVfDPT2ssmugJ7_vzzgkU_-ZNumEFtbp5zA_jMIZfRKU58XI2GsI0weZVjmORmPrG8FWvomEQvTwoheDtf0qD7uJCYfGxi43Lk8_ZLCsLVaBOpmlYWxhVaTrVb78kB5ed49itt4M8YAlmSXgvD4Aba7qW9FR2yU=s2048-k" alt="Historial Académico Kardex" style="max-width: 100%; height: auto; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    </div>
+                </div>
+
+                <!-- SUB-SECCIÓN: TIRA DE MATERIA -->
+                <div id="tab-tira" class="tab-content hidden" style="text-align: center;">
+                    <div class="boleta-header-box"><span class="icon-folder"></span> Tira de materia</div>
+                    <div class="periodo-selector-bar">
+                        <span class="periodo-lbl">2026-1</span>
+                        <div class="periodo-dropdown-sim">
+                            <span>Selecciona un periodo para ver tus calificaciones | 2026-1</span>
+                            <span class="arrow-down">⌂</span>
+                        </div>
+                    </div>
+                    
+                    <!-- IMAGEN AJUSTADA PARA TU TIRA DE MATERIAS -->
+                    <div style="width: 100%; overflow-x: auto; margin-top: 10px;">
+                        <img id="tira-img-src" src="https://lh3.googleusercontent.com/rd-saves/AA8Ys26r9viB7AY8NZB7KBFBilA5b1bZEGB8dNdjoGzlMpljGir5EVOZXGuHwFw7pDzJlIkRgSff3WrIcjclM7lcQtJ59P4gO3MGp5R84EVKQBdPuEjXUvISLV6WkIWslhpeHzRxcS95CO7JBmC-CJ8X5NDwNAgXPjkSahfqqKKUR_sDExU3WsA3r8x8WKHjPXEXWRbqNEwaqP-cqEzbsW4UqaUV5wXk7KCW59u8-gbo_gCgcJHZPA2dwryZUqUAHpPp2jvZwqq7B5ZYIgn4B64rYyvwJVKot7X4dPikYd8dIfZjSwnNQPqr6giPg3EmYoPGRR7Hg9N4ZoMPCddpASYcme0f4tkZboxCfrQqnA7JrRzoXKX63Lc16AJiZWtTw4pQdbX0JurUIRcUNx7ms9PBQqII6yIE-XnQZ0zTMdSZPHjYH4s6GQvpuhwfbt_JVhLbC4iRVmQaoOQphINxnR22L5NniwGPpYz1bg5pedm7b6_dm0JqRZTL4KxCzkdhzF6FIhhqhJ8rwzv6rCHym4c6MkdD5azWXGuUAwBvcBeKWkMYAAfR-BZ0TOsha8gg4tcvKCUq5HMJXvdNhHeRG3g9igak_rjBR9l_tLVmVpEJuXNhRdChtnGlgNsw3yvvfVbCOB7dtB9dthnVgeyQGMSmbsj-GRJueeHn92YXWGrkE9aR6o8zTbxAAsQ6lEg4ec84px3OmH2V4S3fuQxhzL8XhkB_AVG6km9dhmm1DE9BRhpndaTX6bChrTbgDGuS7TtKzcQoyz7N1ScAP-4AbsGi0S2iv5gzo9Y3bYBaPd1T-7UQJWMmuEZGF42ciRZjJbeAKU_gGsBOOq60zuuikUZUcpTKIOYCJR9ib59oL9RIdedXGITtUxXHGaBFwQmL_B43g7dWw87ZI5Lh1DiiT1BbXfIdZueagutH7Kaq7EvwuZDokxCp5hZGYCQcRbwKf6_3jFR6IDwKKEY-gqw41jz_EEMCIfpKpGUfhHpQw2PGk_ixpJi9zn7QgbzTrhvyJ5WIiPjEOP9rvITlul0gd-P_DIaduau9N2oHTqYlse-MixdnTFU-iEi8CjZbCwGvT6OLRc8cx8DSIDkrxmEg7L16YoyIVx_KEk_v-chu_b66yPfw5O7dAfZgZCtEyIeDzkhDlR_EQBaNip_gUMsDS5edFTlNTySpgHjx8ToZVxi5qbT10CVtAUJ2Yyh9LDw=s2048-k"=s2048-k" alt="Tira de Materia Oficial" style="max-width: 100%; height: auto; border: 1px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    </div>
+                </div>
+
+                <!-- SECCIÓN: USUARIO -->
+                <div id="tab-usuario" class="tab-content hidden">
+                    <div class="boleta-header-box"><span class="icon-folder">👤</span> Información General del Estudiante</div>
+                    <div class="profile-info" style="margin-top: 20px; line-height: 1.8; font-size: 14px; color: #334155;">
+                        <p><strong>Nombre Completo:</strong> Yovani Vázquez Guzmán</p>
+                        <p><strong>Matrícula Escolar:</strong> 2025452046</p>
+                        <p><strong>Carrera Universitaria:</strong> Ingeniería en Sistemas Computacionales</p>
+                        <p><strong>Semestre Actual:</strong> 2do Semestre</p>
+                        <p><strong>Estatus del Alumno:</strong> Regular</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
